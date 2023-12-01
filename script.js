@@ -6,32 +6,32 @@ const arrayTeam =
     {
        "name":"Wayne Barnett",
        "role":"Founder & CEO",
-       "image":"wayne-barnett-founder-ceo.jpg" 
+       "image":"img/wayne-barnett-founder-ceo.jpg" 
     },
     {
         "name":"Angela Caroll",
         "role":"Chief Editor",
-        "image":"angela-caroll-chief-editor.jpg"
+        "image":"img/angela-caroll-chief-editor.jpg"
     },
     {
         "name":"Walter Gordon",
         "role":"Office Manager",
-        "image":"walter-gordon-office-manager.jpg"
+        "image":"img/walter-gordon-office-manager.jpg"
     },
     {
         "name":"Angela Lopez",
         "role":"Social Media Manager",
-        "image":"angela-lopez-social-media-manager.jpg"
+        "image":"img/angela-lopez-social-media-manager.jpg"
     },
     {
         "name":"Scott Estrada",
         "role":"Developer",
-        "image":"scott-estrada-developer.jpg"
+        "image":"img/scott-estrada-developer.jpg"
     },
     {
         "name":"Barbara Ramos",
         "role":"Graphic Designer",
-        "image":"barbara-ramos-graphic-designer.jpg"
+        "image":"img/barbara-ramos-graphic-designer.jpg"
     }
 ]
 // MILESTONE 1:
@@ -41,8 +41,24 @@ for (let i = 0; i < arrayTeam.length; i++){
     let membtoIesimo = arrayTeam[i];
 
     for( let chiave in membtoIesimo){
-        console.log(chiave, membtoIesimo[chiave]);
+        // console.log(chiave, membtoIesimo[chiave]);
     }
 }
 // MILESTONE 2:
 // Stampare le stesse informazioni su DOM sotto forma di stringhe
+const output = document.getElementById("text");
+arrayTeam.forEach(membro =>{
+    // creo un div per ogni membro e gli do una classe
+    const  membroContainer = document.createElement('div');
+    membroContainer.classList.add('membro-container');
+    // aggiungo le informaizoni ai container  creati 
+     membroContainer.innerHTML= 
+     `
+     <img src="${membro.image} " alt="${membro.name}>
+     <h1><strong>${membro.name}</strong></h1>
+     <h2><strong>${membro.role}</strong></h2>
+     `;
+
+     output.appendChild(membroContainer);
+     
+});

@@ -36,7 +36,7 @@ const arrayTeam =
 ]
 // MILESTONE 1:
 // Stampare su console, per ogni membro del team, le informazioni di nome, ruolo e la stringa della foto
-console.log(arrayTeam);
+// console.log(arrayTeam);
 for (let i = 0; i < arrayTeam.length; i++){
     let membtoIesimo = arrayTeam[i];
 
@@ -49,27 +49,35 @@ for (let i = 0; i < arrayTeam.length; i++){
 const output = document.getElementById("text");
 arrayTeam.forEach(membro =>{
     // creo un div per ogni membro e gli do una classe
-    const  membroContainer = document.createElement('div');
-    membroContainer.classList.add('membro-container');
+    const  divCard = document.createElement('div');
+    divCard.classList.add('card');
     // aggiungo le informaizoni ai container  creati 
     // creo elemento immagine 
     const imgOutput = document.createElement('img');
         imgOutput.src= membro.image;
         imgOutput.alt=membro.name;
+
+    // creazione div card body 
+    const divCardBody = document.createElement("div");
+    divCardBody.classList.add("card-body")
     // creo Elemento nome 
-    const nomeOutput = document.createElement("h1");
+    const nomeOutput = document.createElement("h5");
+    nomeOutput.classList.add("card-title");
     nomeOutput.innerHTML= `${membro.name}`;
 
     // creo elemento role 
-    const roleOutput = document.createElement("h2");
+    const roleOutput = document.createElement("h6");
+    roleOutput.classList.add("card-subtitle")
     roleOutput.innerHTML=`${membro.role}`
 
     // aggiungo gli elemeti al div contenitore 
-    membroContainer.appendChild(imgOutput);
-    membroContainer.appendChild(nomeOutput);
-    membroContainer.appendChild(roleOutput)
+    divCard.appendChild(imgOutput);
+    divCard.appendChild(divCardBody);
+    divCardBody.appendChild(nomeOutput);
+    divCardBody.appendChild(roleOutput)
+   
 
 
-     output.appendChild(membroContainer);
+     output.appendChild(divCard);
      
 });

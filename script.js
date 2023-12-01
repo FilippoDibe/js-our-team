@@ -46,7 +46,7 @@ for (let i = 0; i < arrayTeam.length; i++){
 }
 // MILESTONE 2:
 // Stampare le stesse informazioni su DOM sotto forma di stringhe
-const output = document.getElementById("text");
+const output = document.getElementById("container");
 arrayTeam.forEach(membro =>{
     // creo un div per ogni membro e gli do una classe
     const  divCard = document.createElement('div');

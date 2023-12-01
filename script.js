@@ -52,12 +52,23 @@ arrayTeam.forEach(membro =>{
     const  membroContainer = document.createElement('div');
     membroContainer.classList.add('membro-container');
     // aggiungo le informaizoni ai container  creati 
-     membroContainer.innerHTML= 
-     `
-     <img src="${membro.image} " alt="${membro.name}>
-     <h1><strong>${membro.name}</strong></h1>
-     <h2><strong>${membro.role}</strong></h2>
-     `;
+    // creo elemento immagine 
+    const imgOutput = document.createElement('img');
+        imgOutput.src= membro.image;
+        imgOutput.alt=membro.name;
+    // creo Elemento nome 
+    const nomeOutput = document.createElement("h1");
+    nomeOutput.innerHTML= `${membro.name}`;
+
+    // creo elemento role 
+    const roleOutput = document.createElement("h2");
+    roleOutput.innerHTML=`${membro.role}`
+
+    // aggiungo gli elemeti al div contenitore 
+    membroContainer.appendChild(imgOutput);
+    membroContainer.appendChild(nomeOutput);
+    membroContainer.appendChild(roleOutput)
+
 
      output.appendChild(membroContainer);
      
